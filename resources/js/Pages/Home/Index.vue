@@ -2,11 +2,13 @@
 <template>
     <Head title="Home | Alfirka" />
 
-    <MainLayout>
+    <MainLayout fullScreen>
+
         <Hero />
         <Features />
         <GalleryPreview />
         <Process />
+        
     </MainLayout>
 </template>
 

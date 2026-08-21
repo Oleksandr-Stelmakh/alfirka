@@ -1,6 +1,6 @@
 <template>
 
-   <section class="relative overflow-hidden bg-violet-50 py-50 dark:bg-violet-950/20">
+   <section class="relative overflow-hidden bg-violet-50 py-30 lg:pt-40 dark:bg-violet-950/20">
  
       <!-- Верхний декоративний градієнт -->
         <div

@@ -1,11 +1,6 @@
 <?php
 
-// use Illuminate\Support\Facades\Route;
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -29,10 +24,12 @@ Route::get('/contacts', function () {
     return Inertia::render('Contacts/Index');
 })->name('contacts');
 
-
-
 Route::get('/products/{slug}', function (string $slug) {
     return Inertia::render('Product/Show', [
         'slug' => $slug,
     ]);
 })->name('products.show');
+
+
+Route::post('/orders', [OrderController::class, 'store'])
+    ->name('orders.store');

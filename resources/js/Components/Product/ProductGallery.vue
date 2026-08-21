@@ -7,7 +7,7 @@
           <img
               :src="selectedImage"
               :alt="bouquet.title"
-              class="h-auto max-h-160 w-full rounded-3xl object-cover shadow-xl"
+              class="h-auto max-h-130 w-full rounded-3xl object-cover shadow-xl"
           >
 
           <!-- Предыдущая фотография -->

@@ -4,15 +4,19 @@
         class="relative flex flex-col items-center text-center"
     >
         <div
-            class="flex h-20 w-20 items-center justify-center rounded-full bg-white text-4xl shadow-lg dark:bg-violet-900"
+            class="h-22 w-22 overflow-hidden rounded-2xl bg-white shadow-lg dark:bg-violet-900"
         >
-            {{ icon }}
+            <img
+                :src="icon"
+                alt="img"
+                class="h-full w-full object-cover"
+            />
         </div>
 
         <!-- Смещение линии относительно центра круга -->
         <div
             v-if="!isLast"
-            class="absolute top-10 left-[calc(32%+2.7rem)] hidden h-0.5 w-[calc(100%-3rem)]  translate-x-1/4 bg-linear-to-r from-pink-300 via-violet-300 to-pink-300 lg:block"
+            class="absolute top-10 left-[calc(35%+2.7rem)] hidden h-0.5 w-[calc(100%-3.7rem)]  translate-x-1/4 bg-linear-to-r from-pink-300 via-violet-300 to-pink-300 lg:block"
          ></div>
 
         <h3

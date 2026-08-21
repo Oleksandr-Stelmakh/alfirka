@@ -29,12 +29,12 @@
                     </Badge>
 
                     <h1 class="hero-fade hero-delay-2 text-4xl sm:text-5xl lg:text-6xl xl:text-[68px] font-semibold text-white/90">
-                        Смак, що перетворюється на квіти.
+                        Смак, що перетворюється на квіти
                     </h1>
 
                     <p class="hero-fade hero-delay-3 mx-auto max-w-2xl text-base sm:text-lg lg:text-xl leading-relaxed text-white/80">
-                        Авторські зефірні букети ручної роботи, які дивують не лише смаком, а й красою.
-                        Завітайте на чашку ароматної кави або оберіть солодкий подарунок для близьких.
+                        Авторські зефірні букети та композиції ручної роботи, які дивують не лише смаком, а й красою.
+                        Завітайте на чашку ароматної кави з зефіркою та оберіть солодкий подарунок для близьких
                     </p>
 
                     <div class="hero-fade hero-delay-4 flex flex-col items-center justify-center gap-4 pt-4 md:flex-row">

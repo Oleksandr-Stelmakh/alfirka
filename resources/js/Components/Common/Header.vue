@@ -18,7 +18,7 @@
                   :src="Logo"
                   alt="Alfirka"
                   class="w-auto brightness-0 invert transition-all duration-300"
-                  :class="isScrolled ? 'h-16' : 'h-24'"
+                  :class="isScrolled ? 'h-16' : 'h-21.5'"
                >
 
                <!-- <span class="text-xl font-semibold text-gray-900 dark:text-gray-100">
@@ -67,13 +67,6 @@
 
       </Container>
 
-      <!-- Мобильное меню -->
-      <!-- <MobileMenu
-         :is-open="isMenuOpen"
-         :navigation="navigation"
-         @close="isMenuOpen = false"
-       /> -->
-
    </header>
 
    <!-- Мобильное меню -->
@@ -92,7 +85,7 @@ import { Menu, X } from 'lucide-vue-next'
 import Container from '@/Components/Common/Container.vue'
 import NavLink from '@/Components/UI/NavLink.vue'
 import ThemeSwitcher from '@/Components/Common/ThemeSwitcher.vue'
-import Logo from '@/Assets/logo1-header.png'
+import Logo from '@/Assets/logo.png'
 import Button from '@/Components/UI/Button.vue'
 import Flower from '@/Components/Icons/Flower.vue'
 import MobileMenu from '@/Components/Common/MobileMenu.vue'

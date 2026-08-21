@@ -51,7 +51,7 @@ const features = [
         description:
             'Кожен зефірний букет створюється вручну та є унікальним',
         image: Handmade,
-        imageClass: 'object-[center_80%]',
+        imageClass: 'object-[center_50%]',
     },
 
     {
@@ -59,7 +59,7 @@ const features = [
         description:
             'Добірні зерна, професійне приготування та затишна атмосфера',
         image: Coffee,
-        imageClass: 'object-[center_40%]',
+        imageClass: 'object-[center_5%]',
     },
 
     {
@@ -67,7 +67,7 @@ const features = [
         description:
             'Подарунок, який дивує красою, смаком і залишає теплі спогади',
         image: Present,
-        imageClass: 'object-[center_40%]',
+        imageClass: 'object-[center_65%]',
     },
 ]
 

@@ -76,15 +76,10 @@
       <Button
           size="lg"
           class="mt-10 w-full max-w-125 self-center lg:max-w-none lg:self-auto hover:text-emerald-300"
+          @click="emit('open-order')"
       >
           Замовити букет
       </Button>
-      <!-- <button
-         class="mt-10 w-full max-w-125 self-center rounded-2xl bg-pink-500 px-8 py-4 text-lg font-semibold text-white transition
-           hover:text-emerald-300 hover:bg-pink-600 lg:max-w-none lg:self-auto"
-      >
-         Замовити букет
-      </button> -->
 
    </section>
 
@@ -108,6 +103,7 @@ const props = defineProps({
 
 const emit = defineEmits([
     'select-size',
+    'open-order',
 ])
 
 function selectSize(size) {

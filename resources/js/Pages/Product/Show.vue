@@ -1,6 +1,6 @@
 <template>
 
-   <MainLayout>
+   <MainLayout fullScreen>
 
       <ProductPage :slug="slug" />
       
