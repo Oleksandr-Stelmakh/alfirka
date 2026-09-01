@@ -93,15 +93,7 @@
                     </svg>
                 </Button>
             </Link>
-            <!-- <Link :href="route('products.show', bouquet.slug)">
-               <Button
-                  variant="glass"
-                  size="sm"
-               >
-                  Детальніше →
-               </Button>
-            </Link> -->
-
+          
          </div>
 
       </div>

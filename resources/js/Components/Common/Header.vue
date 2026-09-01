@@ -44,15 +44,17 @@
 
             <div class="flex items-center gap-2 sm:gap-4">
 
-               <Button variant="primary" size="sm">
+               <Link :href="route('gallery')">
+                  <Button variant="primary" size="sm">
                   
-                   <Flower class="hidden sm:block h-5 w-5 text-gray-200 group-hover:text-sky-300
-                     transition-all duration-300 group-hover:rotate-360 group-hover:scale-110" />
+                      <Flower class="hidden sm:block h-5 w-5 text-gray-200 group-hover:text-sky-300
+                        transition-all duration-300 group-hover:rotate-360 group-hover:scale-110" />
 
-                   <span class="text-xs sm:text-sm text-gray-200 group-hover:text-emerald-300 ">
-                      Замовити букет
-                   </span>
-               </Button>
+                      <span class="text-xs sm:text-sm text-gray-200 group-hover:text-emerald-300 ">
+                         Замовити букет
+                      </span>
+                  </Button>
+               </Link>
 
                <ThemeSwitcher />
 
@@ -80,7 +82,7 @@
 
 <script setup>
 import { ref, watch, onBeforeUnmount, onMounted } from 'vue'
-import { Menu, X } from 'lucide-vue-next'
+import { Link } from '@inertiajs/vue3'
 
 import Container from '@/Components/Common/Container.vue'
 import NavLink from '@/Components/UI/NavLink.vue'

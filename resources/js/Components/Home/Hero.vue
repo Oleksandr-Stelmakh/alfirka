@@ -39,24 +39,25 @@
 
                     <div class="hero-fade hero-delay-4 flex flex-col items-center justify-center gap-4 pt-4 md:flex-row">
 
-                        <Button variant="primary" size="lg">
-                            <Flower class="h-5 w-5 transition-transform  text-gray-200 group-hover:text-sky-300  
-                                duration-300 group-hover:rotate-360 group-hover:scale-115"/>
-
-                                <span class="text-xs sm:text-sm lg:text-lg text-gray-200 group-hover:text-emerald-300">
-                                   Замовити букет
-                                </span>
-                            
-                        </Button>
-
                         <Link :href="route('gallery')">
+                            <Button variant="primary" size="lg">
+                                <Flower class="h-5 w-5 transition-transform  text-gray-200 group-hover:text-sky-300  
+                                    duration-300 group-hover:rotate-360 group-hover:scale-115"/>
+
+                                    <span class="text-xs sm:text-sm lg:text-lg text-gray-200 group-hover:text-emerald-300">
+                                       Замовити букет
+                                    </span>
+                            </Button>
+                        </Link>
+
+                        <!-- <Link :href="route('gallery')">
                             <Button 
                                 variant="glass" 
                                 size="lg" 
                                 class="text-gray-100">
                                     Переглянути меню
                             </Button>
-                        </Link>
+                        </Link> -->
 
                     </div>
 

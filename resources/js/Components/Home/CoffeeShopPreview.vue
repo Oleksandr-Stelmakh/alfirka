@@ -54,7 +54,7 @@
                            variant="glass"
                            size="lg"
                            class="mt-8 text-gray-200 border-white/20 bg-white/10 hover:border-pink-500/50">
-                              Завітати до кав'ярні
+                              Переглянути меню кав'ярні
                         </Button>
                      </Link>
 
