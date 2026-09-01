@@ -38,7 +38,6 @@
 
 import Container from '@/Components/Common/Container.vue'
 import FeatureCard from '@/Components/UI/FeatureCard.vue'
-import Flower from '@/Components/Icons/Flower.vue'
 import SectionHeader from '@/Components/UI/SectionHeader.vue'
 
 import Handmade from '@/Assets/images-optimized/features/handmade.webp'

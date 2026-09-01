@@ -4,6 +4,8 @@ use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+
+
 Route::get('/', function () {
     return Inertia::render('Home/Index');
 })->name('home');
@@ -29,7 +31,6 @@ Route::get('/products/{slug}', function (string $slug) {
         'slug' => $slug,
     ]);
 })->name('products.show');
-
 
 Route::post('/orders', [OrderController::class, 'store'])
     ->name('orders.store');

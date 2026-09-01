@@ -46,9 +46,21 @@ class StoreOrderRequest extends FormRequest
                 'string',
             ],
 
+            'bouquet_title' => [
+                'required',
+                'string',
+                'max:255',
+            ],
+
             'size_id' => [
                 'required',
                 'string',
+            ],
+
+            'price' => [
+                'required',
+                'numeric',
+                'min:0',
             ],
 
         ];
@@ -78,6 +90,12 @@ class StoreOrderRequest extends FormRequest
 
             'size_id.required' =>
                 'Не вдалося визначити розмір букета',
+
+            'bouquet_title.required' =>
+                'Не вдалося визначити букет',
+
+            'price.required' =>
+                'Не вдалося визначити ціну букета',
 
         ];
     }

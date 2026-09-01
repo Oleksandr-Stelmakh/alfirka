@@ -23,7 +23,7 @@
             <p
                 class="mx-auto mt-3 max-w-xl text-violet-600 dark:text-violet-300"
             >
-                Заповніть форму, і ми зв'яжемося з вами для уточнення деталей замовлення.
+                Заповніть форму, і ми зв'яжемося з вами для уточнення деталей замовлення
             </p>
 
         </div>
@@ -42,7 +42,7 @@
                 <div>
 
                     <p
-                        class="text-sm text-violet-500 dark:text-violet-300"
+                        class="text-sm sm:text-center text-violet-500 dark:text-violet-300"
                     >
                         Обраний букет
                     </p>
@@ -65,7 +65,7 @@
                     </p>
 
                     <p
-                        class="mt-1 font-semibold text-violet-900 dark:text-white"
+                        class="mt-1 font-semibold sm:text-center text-violet-900 dark:text-white"
                     >
                         {{ selectedSize.name }}
                     </p>
@@ -73,7 +73,7 @@
                 </div>
 
 
-                <div class="sm:text-right">
+                <div class="sm:text-center">
 
                     <p
                         class="text-sm text-violet-500 dark:text-violet-300"
@@ -426,19 +426,27 @@ function submitForm() {
     successMessage.value = ''
 
     router.post(
+
         route('orders.store'),
 
         {
+
             name: form.name,
             phone: form.phone,
             email: form.email,
             comment: form.comment,
 
             bouquet_slug: props.bouquet.slug,
+            bouquet_title: props.bouquet.title,
+            bouquet_image: props.bouquet.image,
+
             size_id: props.selectedSize.id,
+            price: props.selectedSize.price,
+
         },
 
         {
+
             preserveScroll: true,
 
             onStart: () => {
@@ -457,6 +465,15 @@ function submitForm() {
 
                 successMessage.value =
                     'Ваше замовлення успішно відправлено! Ми зв’яжемося з вами найближчим часом'
+
+                form.name = ''
+                form.phone = ''
+                form.email = ''
+                form.comment = ''
+
+                errors.name = ''
+                errors.phone = ''
+                errors.email = ''
 
             },
 
@@ -479,45 +496,9 @@ function submitForm() {
             },
 
         }
+
     )
 
 }
-
-
-
-// async function submitForm() {
-
-//     if (!validateForm()) {
-
-//         return
-
-//     }
-
-
-//     isSubmitting.value = true
-
-
-//     // Пока только имитация отправки.
-//     // Laravel подключим следующим этапом.
-
-//     console.log('ORDER:', {
-
-//         bouquet: props.bouquet,
-//         size: props.selectedSize,
-//         customer: form,
-
-//     })
-
-
-//    setTimeout(() => {
-
-//       isSubmitting.value = false
-
-//       successMessage.value =
-//          'Ваше замовлення успішно відправлено! Ми зв’яжемося з вами найближчим часом.'
-
-//    }, 1000)
-
-// }
 
 </script>

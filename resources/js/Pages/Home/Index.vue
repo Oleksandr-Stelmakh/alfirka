@@ -8,6 +8,7 @@
         <Features />
         <GalleryPreview />
         <Process />
+        <CoffeeShopPreview />
         
     </MainLayout>
 </template>
@@ -21,4 +22,5 @@ import Hero from '@/Components/Home/Hero.vue'
 import Features from '@/Components/Home/Features.vue'
 import GalleryPreview from '@/Components/Home/GalleryPreview.vue'
 import Process from '@/Components/Home/Process.vue'
+import CoffeeShopPreview from '@/Components/Home/CoffeeShopPreview.vue'
 </script>

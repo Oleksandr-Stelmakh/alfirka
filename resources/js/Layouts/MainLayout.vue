@@ -3,7 +3,7 @@
     <div class="min-h-screen flex flex-col">
         <Header />
 
-        <main class="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300"
+        <main class="min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300"
             :class="fullScreen ? '' : 'pt-32'"
         >
             <slot />

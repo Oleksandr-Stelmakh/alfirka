@@ -110,7 +110,7 @@ const variantClass = computed(() => {
     switch (props.variant) {
 
         case 'glass':
-            return `border dark:border-white/20 dark:bg-white/10 backdrop-blur-md dark:hover:bg-white/20 dark:hover:border-white/30`
+            return `border dark:border-white/20 dark:bg-white/10 backdrop-blur-md dark:hover:bg-white/20 dark:hover:border-pink-500/50 hover:text-pink-500/90`
 
         case 'secondary':
             return `bg-gray-200 text-gray-800 hover:bg-gray-300`

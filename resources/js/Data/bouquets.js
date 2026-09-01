@@ -20,7 +20,7 @@ const bouquets = [
         slug: 'flower-tenderness',
         title: 'Квіткова ніжність',
         image: Gallery1,
-        shortDescription: 'Ніжний букет із натурального зефіру ручної роботи.',
+        shortDescription: 'Ніжний букет із натурального зефіру ручної роботи',
         
 
         sizes: [
@@ -86,7 +86,7 @@ const bouquets = [
         slug: 'strawberry-morning',
         title: 'Полуничний ранок',
         image: Gallery2,
-        shortDescription: 'Легка композиція у ніжних рожевих відтінках.',
+        shortDescription: 'Легка композиція у ніжних рожевих відтінках',
 
         sizes: [
             {
@@ -157,7 +157,7 @@ const bouquets = [
         slug: 'sweet-love',
         title: 'Солодке кохання',
         image: Gallery3,
-        shortDescription: 'Ідеальний подарунок для особливого дня.',
+        shortDescription: 'Ідеальний подарунок для особливого дня',
 
         sizes: [
             {
@@ -222,7 +222,7 @@ const bouquets = [
         slug: 'berry-dream',
         title: 'Ягідна мрія',
         image: Gallery4,
-        shortDescription: 'Яскравий букет із полуничними нотками.',
+        shortDescription: 'Яскравий букет із полуничними нотками',
 
         sizes: [
             {
@@ -287,7 +287,7 @@ const bouquets = [
         slug: 'pink-cloud',
         title: 'Рожева хмаринка',
         image: Gallery5,
-        shortDescription: 'Повітряна композиція для найтепліших моментів.',
+        shortDescription: 'Повітряна композиція для найтепліших моментів',
 
         sizes: [
             {
@@ -351,7 +351,7 @@ const bouquets = [
         slug: 'lavender-mood',
         title: 'Лавандовий настрій',
         image: Gallery6,
-        shortDescription: 'Поєднання ніжності, стилю та смаку.',
+        shortDescription: 'Поєднання ніжності, стилю та смаку',
 
         sizes: [
             {
@@ -416,7 +416,7 @@ const bouquets = [
         slug: 'magic-evening',
         title: 'Чарівний вечір',
         image: Gallery7,
-        shortDescription: 'Елегантна композиція для особливих подій.',
+        shortDescription: 'Елегантна композиція для особливих подій',
 
         sizes: [
             {
@@ -480,7 +480,7 @@ const bouquets = [
         slug: 'sweet-happiness',
         title: 'Солодке щастя',
         image: Gallery8,
-        shortDescription: 'Букет, який дарує усмішку з першого погляду.',
+        shortDescription: 'Букет, який дарує усмішку з першого погляду',
 
         sizes: [
             {
@@ -544,7 +544,7 @@ const bouquets = [
         slug: 'coffee-romance',
         title: 'Кавова романтика',
         image: Gallery9,
-        shortDescription: 'Теплі відтінки та витончений стиль.',
+        shortDescription: 'Теплі відтінки та витончений стиль',
 
         sizes: [
             {
@@ -608,7 +608,7 @@ const bouquets = [
         slug: 'coffee-romance-2',
         title: 'Кавова романтика',
         image: Gallery10,
-        shortDescription: 'Теплі відтінки та витончений стиль.',
+        shortDescription: 'Теплі відтінки та витончений стиль',
 
         sizes: [
             {

@@ -37,7 +37,7 @@
                :bouquet="bouquet"
                :selected-size="selectedSize"
                @select-size="selectedSize = $event"
-               @open-order="isOrderFormOpen = true"
+               @order="openOrderForm"
             />
 
          </div>
@@ -51,12 +51,17 @@
              leave-to-class="opacity-0 translate-y-8"
          >
 
-             <ProductOrderForm
-                 v-if="isOrderFormOpen"
-                 :bouquet="bouquet"
-                 :selected-size="selectedSize"
-                 @close="isOrderFormOpen = false"
-             />
+            <div
+               v-if="showOrderForm"
+               ref="orderFormSection"
+               class="scroll-mt-28"
+            >
+               <ProductOrderForm
+                  :bouquet="bouquet"
+                  :selected-size="selectedSize"
+                  @close="showOrderForm = false"
+               />
+            </div>
 
          </Transition>
 
@@ -67,7 +72,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, nextTick } from 'vue'
 import bouquets from '@/Data/bouquets'
 
 import Container from '@/Components/Common/Container.vue'
@@ -89,5 +94,23 @@ const bouquet = bouquets.find(
 
 const selectedSize = ref(bouquet.sizes[0])
 
-const isOrderFormOpen = ref(false)
+const showOrderForm = ref(false)
+
+const orderFormSection = ref(null)
+
+async function openOrderForm() {
+
+    showOrderForm.value = true
+
+    await nextTick()
+
+    orderFormSection.value?.scrollIntoView({
+
+        behavior: 'smooth',
+
+        block: 'start',
+
+    })
+
+}
 </script>

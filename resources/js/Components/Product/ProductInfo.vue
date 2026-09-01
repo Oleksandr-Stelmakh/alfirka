@@ -76,7 +76,7 @@
       <Button
           size="lg"
           class="mt-10 w-full max-w-125 self-center lg:max-w-none lg:self-auto hover:text-emerald-300"
-          @click="emit('open-order')"
+          @click="emit('order')"
       >
           Замовити букет
       </Button>
@@ -103,7 +103,7 @@ const props = defineProps({
 
 const emit = defineEmits([
     'select-size',
-    'open-order',
+    'order',
 ])
 
 function selectSize(size) {
