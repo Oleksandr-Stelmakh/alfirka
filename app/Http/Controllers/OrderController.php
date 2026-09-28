@@ -30,6 +30,8 @@ class OrderController extends Controller
             'email' => $order->email,
             'comment' => $order->comment,
 
+            'product_variant_id' => $order->product_variant_id,
+            
             'bouquet_slug' => $order->bouquet_slug,
             'bouquet_title' => $order->bouquet_title,
 

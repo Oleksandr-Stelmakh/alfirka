@@ -73,7 +73,6 @@
 
 <script setup>
 import { ref, nextTick } from 'vue'
-import bouquets from '@/Data/bouquets'
 
 import Container from '@/Components/Common/Container.vue'
 import ProductGallery from './ProductGallery.vue'
@@ -82,17 +81,15 @@ import ProductOrderForm from './ProductOrderForm.vue'
 
 
 const props = defineProps({
-    slug: {
-        type: String,
+    product: {
+        type: Object,
         required: true,
     },
 })
 
-const bouquet = bouquets.find(
-    bouquet => bouquet.slug === props.slug
-)
+const bouquet = props.product
 
-const selectedSize = ref(bouquet.sizes[0])
+const selectedSize = ref(bouquet.variants[0])
 
 const showOrderForm = ref(false)
 

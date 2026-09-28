@@ -33,9 +33,9 @@
          <div class="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
             <BouquetCard
-               v-for="bouquet in bouquets"
-               :key="bouquet.id"
-               :bouquet="bouquet"
+               v-for="product in products"
+               :key="product.id"
+               :bouquet="product"
             />
 
          </div>
@@ -52,6 +52,10 @@ import Container from '@/Components/Common/Container.vue'
 import SectionHeader from '@/Components/UI/SectionHeader.vue'
 import BouquetCard from '@/Components/Gallery/BouquetCard.vue'
 
-import bouquets from '@/Data/bouquets'
-
+defineProps({
+    products: {
+        type: Array,
+        required: true,
+    },
+})
 </script>

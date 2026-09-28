@@ -2,7 +2,9 @@
 
 namespace App\Services;
 
+use App\Models\ProductVariant;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class TelegramService
 {
@@ -50,9 +52,30 @@ class TelegramService
     public function sendOrderNotification(array $order): void
     {
 
-        $photoPath = config(
-            'bouquets.' . $order['bouquet_slug']
-        );
+        $variant = ProductVariant::query()
+            ->with([
+                'images' => function ($query) {
+                    $query->orderBy('sort_order');
+                },
+                'product.images' => function ($query) {
+                    $query->orderBy('sort_order');
+                },
+            ])
+            ->findOrFail($order['product_variant_id']);
+
+        $mainImage = $variant->images->first(
+            fn ($image) => $image->is_main
+        ) ?? $variant->images->first();
+
+        if (!$mainImage) {
+            $mainImage = $variant->product->images->first(
+                fn ($image) => $image->is_main
+            ) ?? $variant->product->images->first();
+        }
+
+        $photoPath = $mainImage
+            ? Storage::disk('public')->path($mainImage->path)
+            : null;
 
         $comment = $order['comment'] ?: 'Не вказано';
 
@@ -84,9 +107,15 @@ class TelegramService
  {$comment}
 HTML;
 
-        $this->sendPhoto(
-            $photoPath,
-            $message
-        );
+        if ($photoPath && file_exists($photoPath)) {
+            $this->sendPhoto(
+                $photoPath,
+                $message
+            );
+
+            return;
+        }
+
+        $this->sendMessage($message);
     }
 }

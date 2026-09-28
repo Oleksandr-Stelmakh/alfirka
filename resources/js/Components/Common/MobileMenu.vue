@@ -1,10 +1,7 @@
 <template>
     <Transition name="mobile-menu">
-        <div
-         v-if="isOpen"
-         class="fixed inset-0 z-40 lg:hidden">
-
-                <!-- Затемнение -->
+        <div v-if="isOpen" class="fixed inset-0 z-40 lg:hidden">
+            <!-- Затемнение -->
             <div
                 class="absolute inset-0 bg-black/55 backdrop-blur-[2px]"
                 @click="emit('close')"
@@ -12,17 +9,11 @@
 
             <!-- Панель меню -->
             <div
-                class="fixed right-4  w-80
-                overflow-hidden rounded-2xl border border-pink-300/20
-                bg-white/10 backdrop-blur-xl shadow-xl"
-                 :class="
-                    isScrolled
-                        ? 'top-18'
-                        : 'top-28 sm:top-32'
-                "
+                class="fixed right-4 w-80 overflow-hidden rounded-2xl border border-pink-300/20 bg-white/10 backdrop-blur-xl shadow-xl"
+                :class="isScrolled ? 'top-18' : 'top-28 sm:top-32'"
             >
                 <ul>
-                   <li
+                    <li
                         v-for="item in navigation"
                         :key="item.route"
                         class="border-b border-white/10 last:border-none"
@@ -37,17 +28,15 @@
                         </NavLink>
                     </li>
                 </ul>
-           </div>
+            </div>
         </div>
     </Transition>
 </template>
 
 <script setup>
-import NavLink from '@/Components/UI/NavLink.vue'
+import NavLink from "@/Components/UI/NavLink.vue";
 
-const emit = defineEmits([
-    'close',
-])
+const emit = defineEmits(["close"]);
 
 defineProps({
     isOpen: {
@@ -64,16 +53,16 @@ defineProps({
         type: Array,
         required: true,
     },
-})
-
+});
 </script>
 
 <style scoped>
-
 .mobile-menu-enter-active,
 .mobile-menu-leave-active {
     /* transition: all .25s ease; */
-    transition: opacity .3s ease, transform .3s ease;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
 .mobile-menu-enter-from,
@@ -88,5 +77,4 @@ defineProps({
     opacity: 1;
     transform: translateY(0);
 }
-
 </style>

@@ -1,22 +1,20 @@
 <template>
+    <Head :title="`${product.title} | Alfirka`" />
 
-   <MainLayout fullScreen>
-
-      <ProductPage :slug="slug" />
-      
-   </MainLayout>
-
+    <MainLayout fullScreen>
+        <ProductPage :product="product" />
+    </MainLayout>
 </template>
 
 <script setup>
-
-import MainLayout from '@/Layouts/MainLayout.vue'
-import ProductPage from '@/Components/Product/ProductPage.vue'
+import { Head } from "@inertiajs/vue3";
+import MainLayout from "@/Layouts/MainLayout.vue";
+import ProductPage from "@/Components/Product/ProductPage.vue";
 
 defineProps({
-    slug: {
-        type: String,
+    product: {
+        type: Object,
         required: true,
     },
-})
+});
 </script>

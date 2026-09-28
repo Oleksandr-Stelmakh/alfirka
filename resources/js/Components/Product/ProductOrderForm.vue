@@ -430,19 +430,11 @@ function submitForm() {
         route('orders.store'),
 
         {
-
             name: form.name,
             phone: form.phone,
             email: form.email,
             comment: form.comment,
-
-            bouquet_slug: props.bouquet.slug,
-            bouquet_title: props.bouquet.title,
-            bouquet_image: props.bouquet.image,
-
-            size_id: props.selectedSize.id,
-            price: props.selectedSize.price,
-
+            product_variant_id: props.selectedSize.id,
         },
 
         {

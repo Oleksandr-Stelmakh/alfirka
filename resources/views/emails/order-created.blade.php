@@ -17,7 +17,7 @@
 
       <p>
          <strong>👤 Ім'я:</strong><br>
-         {{ $order['name'] }}
+            {{ $order['name'] }}
       </p>
 
       <p>
@@ -30,24 +30,24 @@
 
       <p>
          <strong>📧 Email:</strong><br>
-         {{ $order['email'] }}
+            {{ $order['email'] }}
       </p>
 
       <hr>
 
       <p>
          <strong>💐 Букет:</strong><br>
-         {{ $order['bouquet_title'] }}
+            {{ $order['bouquet_title'] }}
       </p>
 
       <p>
          <strong>📦 Розмір:</strong><br>
-         {{ $order['size'] }}
+            {{ $order['size'] }}
       </p>
 
       <p>
          <strong>💰 Ціна:</strong><br>
-         {{ $order['price'] }} грн
+            {{ $order['price'] }} грн
       </p>
 
       <hr>
@@ -55,7 +55,7 @@
       <p>
          <strong>💬 Коментар:</strong><br>
 
-         {{ $order['comment'] ?: 'Не вказано' }}
+            {{ $order['comment'] ?: 'Не вказано' }}
       </p>
 
    </body>

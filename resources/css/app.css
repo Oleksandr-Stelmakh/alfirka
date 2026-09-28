@@ -10,9 +10,7 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-/* ================================
-   Autofill — светлая тема
-================================ */
+/* Autofill — светлая тема */
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -26,9 +24,7 @@ textarea:-webkit-autofill:focus {
 }
 
 
-/* ================================
-   Autofill — тёмная тема
-================================ */
+/* Autofill — тёмная тема */
 
 .dark input:-webkit-autofill,
 .dark input:-webkit-autofill:hover,

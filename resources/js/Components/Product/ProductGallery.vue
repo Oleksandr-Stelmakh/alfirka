@@ -83,7 +83,7 @@
             ]"
          >
             <img
-               :src="image"
+               :src="image.path"
                :alt="`${bouquet.title} — фото ${index + 1}`"
                class="h-24 w-24 object-cover"
             >
@@ -110,12 +110,17 @@ const props = defineProps({
    },
 })
 
-const selectedImage = ref(props.selectedSize.images?.[0] ?? props.bouquet.image)
+const selectedImage = ref(
+    props.selectedSize.images?.[0]?.path
+    ?? props.bouquet.images?.find(image => image.is_main)?.path
+    ?? props.bouquet.images?.[0]?.path
+    ?? ''
+)
 
 const selectedImageIndex = ref(0)
 
 function selectImage(image, index) {
-    selectedImage.value = image
+    selectedImage.value = image.path
     selectedImageIndex.value = index
 }
 
@@ -127,7 +132,7 @@ function previousImage() {
     selectedImageIndex.value--
 
     selectedImage.value =
-        props.selectedSize.images[selectedImageIndex.value]
+    props.selectedSize.images[selectedImageIndex.value]?.path ?? ''
 }
 
 function nextImage() {
@@ -141,15 +146,19 @@ function nextImage() {
     selectedImageIndex.value++
 
     selectedImage.value =
-        props.selectedSize.images[selectedImageIndex.value]
+    props.selectedSize.images[selectedImageIndex.value]?.path ?? ''
 }
 
 watch(
-   () => props.selectedSize,
-   (newSize) => {
-      selectedImageIndex.value = 0
+    () => props.selectedSize,
+    (newSize) => {
+        selectedImageIndex.value = 0
 
-      selectedImage.value = newSize.images?.[0] ?? props.bouquet.image
-   }
+        selectedImage.value =
+            newSize.images?.[0]?.path
+            ?? props.bouquet.images?.find(image => image.is_main)?.path
+            ?? props.bouquet.images?.[0]?.path
+            ?? ''
+    }
 )
 </script>

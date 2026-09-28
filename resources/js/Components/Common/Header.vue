@@ -14,12 +14,14 @@
 
          <div class="flex items-center justify-between">
             <div class="flex items-center gap-3">
-               <img
-                  :src="Logo"
-                  alt="Alfirka"
-                  class="w-auto brightness-0 invert transition-all duration-300"
-                  :class="isScrolled ? 'h-16' : 'h-21.5'"
-               >
+               <Link :href="route('home')" aria-label="На головну">
+                  <img
+                     :src="Logo"
+                     alt="Alfirka"
+                     class="w-auto brightness-0 invert transition-all duration-300"
+                     :class="isScrolled ? 'h-16' : 'h-21.5'"
+                  >
+               </Link>
 
                <!-- <span class="text-xl font-semibold text-gray-900 dark:text-gray-100">
                   Alfirka

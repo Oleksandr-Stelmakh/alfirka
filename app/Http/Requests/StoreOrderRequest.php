@@ -41,26 +41,10 @@ class StoreOrderRequest extends FormRequest
                 'max:1000',
             ],
 
-            'bouquet_slug' => [
+            'product_variant_id' => [
                 'required',
-                'string',
-            ],
-
-            'bouquet_title' => [
-                'required',
-                'string',
-                'max:255',
-            ],
-
-            'size_id' => [
-                'required',
-                'string',
-            ],
-
-            'price' => [
-                'required',
-                'numeric',
-                'min:0',
+                'integer',
+                'exists:product_variants,id',
             ],
 
         ];
@@ -85,17 +69,11 @@ class StoreOrderRequest extends FormRequest
             'email.email' =>
                 'Введіть коректний Email',
 
-            'bouquet_slug.required' =>
-                'Не вдалося визначити букет',
+            'product_variant_id.required' =>
+                'Не вдалося визначити товар',
 
-            'size_id.required' =>
-                'Не вдалося визначити розмір букета',
-
-            'bouquet_title.required' =>
-                'Не вдалося визначити букет',
-
-            'price.required' =>
-                'Не вдалося визначити ціну букета',
+            'product_variant_id.exists' =>
+                'Обраний товар не існує',
 
         ];
     }

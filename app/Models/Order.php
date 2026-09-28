@@ -14,6 +14,8 @@ class Order extends Model
         'email',
         'comment',
 
+        'product_variant_id',
+        
         'bouquet_slug',
         'bouquet_title',
 

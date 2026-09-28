@@ -1,93 +1,87 @@
 <template>
+    <section class="px-2 sm:px-0 flex flex-col">
+        <h1 class="text-4xl font-bold text-violet-900 dark:text-white">
+            {{ bouquet.title }}
+        </h1>
 
-   <section class="px-2 sm:px-0 flex flex-col">
+        <p class="mt-6 text-lg leading-8 text-violet-600 dark:text-violet-300">
+            {{ bouquet.description }}
+        </p>
 
-      <h1
-         class="text-4xl font-bold text-violet-900 dark:text-white"
-      >
-         {{ bouquet.title }}
-      </h1>
-
-      <p
-         class="mt-6 text-lg leading-8 text-violet-600 dark:text-violet-300"
-      >
-         {{ bouquet.shortDescription }}
-      </p>
-
-      <div class="mt-8">
-
-         <p class="text-sm font-medium text-violet-500">
-            Розмір
-         </p>
-
-         <div class="mt-3 flex flex-wrap gap-3">
-
-            <button
-               v-for="size in bouquet.sizes"
-               :key="size.id"
-               type="button"
-               @click="selectSize(size)"
-               :class="[
-                  'rounded-xl border-2 px-6 py-3 font-semibold transition',
-                  selectedSize.id === size.id
-                     ? 'border-pink-600 bg-pink-600 text-white shadow-md'
-                     : 'border-violet-200 bg-white text-violet-700 hover:border-pink-400 dark:border-violet-700 dark:bg-violet-900 dark:text-violet-200',
-               ]"
+        <div
+            v-if="bouquet.full_description"
+            class="mt-8 text-base leading-7 text-gray-700 dark:text-gray-300"
+        >
+            <h2
+                class="mb-3 text-xl font-semibold text-violet-900 dark:text-white"
             >
-               {{ size.name }}
-            </button>
+                Детальний опис
+            </h2>
 
-         </div>
+            <p class="whitespace-pre-line">
+                {{ bouquet.full_description }}
+            </p>
+        </div>
 
-      </div>
+        <div class="mt-8">
+            <p class="text-sm font-medium text-violet-500">Розмір</p>
 
-      <div class="mt-8 flex flex-wrap gap-3">
+            <div class="mt-3 flex flex-wrap gap-3">
+                <button
+                    v-for="size in bouquet.variants"
+                    :key="size.id"
+                    type="button"
+                    @click="selectSize(size)"
+                    :class="[
+                        'rounded-xl border-2 px-6 py-3 font-semibold transition',
+                        selectedSize.id === size.id
+                            ? 'border-pink-600 bg-pink-600 text-white shadow-md'
+                            : 'border-violet-200 bg-white text-violet-700 hover:border-pink-400 dark:border-violet-700 dark:bg-violet-900 dark:text-violet-200',
+                    ]"
+                >
+                    {{ size.name }}
+                </button>
+            </div>
+        </div>
 
-         <span
-            class="rounded-full bg-violet-100 px-4 py-2 dark:bg-violet-800 text-violet-700 dark:text-violet-200"
-         >
-            📦 {{ selectedSize.boxSize }}
-         </span>
+        <div class="mt-8 flex flex-wrap gap-3">
+            <span
+                v-if="selectedSize.box_size"
+                class="rounded-full bg-violet-100 px-4 py-2 dark:bg-violet-800 text-violet-700 dark:text-violet-200"
+            >
+                📦 {{ selectedSize.box_size }}
+            </span>
 
-         <span
-            class="rounded-full bg-pink-100 px-4 py-2 dark:bg-pink-900/50 text-pink-700 dark:text-pink-200"
-         >
-            🌸 {{ selectedSize.flowersCount }} квітів
-         </span>
+            <span
+                v-if="selectedSize.flowers_count"
+                class="rounded-full bg-pink-100 px-4 py-2 dark:bg-pink-900/50 text-pink-700 dark:text-pink-200"
+            >
+                🌸 {{ selectedSize.flowers_count }} квітів
+            </span>
+        </div>
 
-      </div>
+        <div class="mt-10">
+            <p class="text-sm uppercase tracking-[0.3em] text-violet-500">
+                Ціна
+            </p>
 
-      <div class="mt-10">
+            <p class="mt-2 text-5xl font-bold text-pink-600">
+                {{ selectedSize.price }} грн
+            </p>
+        </div>
 
-         <p
-            class="text-sm uppercase tracking-[0.3em] text-violet-500"
-         >
-            Ціна
-         </p>
-
-         <p
-            class="mt-2 text-5xl font-bold text-pink-600"
-         >
-            {{ selectedSize.price }} грн
-         </p>
-
-      </div>
-
-      <Button
-          size="lg"
-          class="mt-10 w-full max-w-125 self-center lg:max-w-none lg:self-auto hover:text-emerald-300"
-          @click="emit('order')"
-      >
-          Замовити букет
-      </Button>
-
-   </section>
-
+        <Button
+            size="lg"
+            class="mt-10 w-full max-w-125 self-center lg:max-w-none lg:self-auto hover:text-emerald-300"
+            @click="emit('order')"
+        >
+            Замовити букет
+        </Button>
+    </section>
 </template>
 
-
 <script setup>
-import Button from '@/Components/UI/Button.vue'
+import Button from "@/Components/UI/Button.vue";
 
 const props = defineProps({
     bouquet: {
@@ -99,14 +93,11 @@ const props = defineProps({
         type: Object,
         required: true,
     },
-})
+});
 
-const emit = defineEmits([
-    'select-size',
-    'order',
-])
+const emit = defineEmits(["select-size", "order"]);
 
 function selectSize(size) {
-    emit('select-size', size)
+    emit("select-size", size);
 }
 </script>
