@@ -4,7 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <!-- <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="manifest" href="/site.webmanifest"> -->
+
+    @php
+    $isAdmin = request()->is('admin*');
+@endphp
+
+@if ($isAdmin)
+    <link rel="icon" type="image/x-icon" href="/icons/admin/favicon.ico">
+    <link rel="apple-touch-icon" href="/icons/admin/apple-touch-icon.png">
+    <link rel="manifest" href="/admin.webmanifest">
+    <meta name="theme-color" content="#7b2cbf">
+@else
+    <link rel="icon" type="image/x-icon" href="/icons/alfirka/favicon.ico">
+    <link rel="apple-touch-icon" href="/icons/alfirka/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#ffe0e8">
+@endif
 
      <!-- Open Graph -->
     <meta property="og:title" content="Alfirka" />

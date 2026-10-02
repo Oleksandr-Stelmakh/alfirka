@@ -19,7 +19,7 @@
 
                         <h2 class="text-2xl font-semibold tracking-wide">
                             Alfirka
-                            <p class="text-xs text-gray-300">
+                            <p class="text-xs text-gray-600 dark:text-gray-300">
                                 Студія зефірної флористики
                             </p>
                         </h2>
