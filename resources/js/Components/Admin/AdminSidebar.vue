@@ -8,7 +8,7 @@
 
     <!-- Sidebar -->
     <aside
-        class="fixed inset-y-0 left-0 z-50 w-[20vw] min-w-40 max-w-64 shrink-0 overflow-hidden border-r border-gray-200 bg-purple-50 transition-transform duration-300 lg:static lg:z-auto lg:translate-x-0"
+        class="fixed inset-y-0 left-0 z-50 w-52 min-w-40 max-w-64 lg:w-[20vw] shrink-0 overflow-hidden border-r border-gray-200 bg-purple-50 transition-transform duration-300 lg:static lg:z-auto lg:translate-x-0"
         :class="open ? 'translate-x-0' : '-translate-x-full'"
     >
         <div class="flex h-full min-w-0 flex-col">

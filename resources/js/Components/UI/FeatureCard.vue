@@ -2,7 +2,7 @@
 
     <article
         class="group rounded-3xl border border-pink-200 dark:border-pink-200/25 bg-white/5 p-8 backdrop-blur-md transition-all duration-300 
-            hover:-translate-y-2 hover:border-pink-500/50 hover:bg-white/10 hover:shadow-2xl dark:hover:shadow-pink-100/10"
+             hover:border-pink-500/50 hover:bg-white/10 hover:shadow-md dark:hover:shadow-pink-100/10"
     >
 
         <div

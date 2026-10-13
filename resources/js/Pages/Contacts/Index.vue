@@ -1,7 +1,9 @@
 <template>
     <Head title="Контакти | Alfirka" />
 
-    <MainLayout>
+    <MainLayout fullScreen>
+        <ContactInfo />
+
         <div class="mx-auto max-w-4xl px-6 py-16">
             <h1 class="text-4xl font-bold">КОНТАКТИ</h1>
 
@@ -14,7 +16,7 @@
                 <p>Что нужно разместить:</p>
 
                 <ul class="list-disc space-y-2 pl-6">
-                    <li>Номер телефона. 0660592120</li>
+                    <li class="line-through">Номер телефона. 0660592120</li>
                     <li>Email.</li>
                     <li>Ссылки на Instagram / социальные сети. @alfirka_if</li>
                     <li>Адрес или город работы.</li>
@@ -37,4 +39,6 @@
 import { Head } from "@inertiajs/vue3";
 
 import MainLayout from "@/Layouts/MainLayout.vue";
+
+import ContactInfo from "@/Components/Contacts/ContactInfo.vue";
 </script>
