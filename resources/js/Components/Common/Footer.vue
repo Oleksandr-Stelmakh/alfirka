@@ -2,31 +2,40 @@
     <footer
         class="border-t border-gray-300 bg-zinc-200 text-gray-900 dark:border-gray-700 dark:bg-zinc-900 dark:text-gray-100"
     >
-        <div class="mx-auto max-w-7xl px-6 pt-14">
+        <Container class="pt-14">
             <div class="grid gap-10 md:grid-cols-3">
                 <!-- Brand -->
                 <div>
-                    <Link
-                        :href="route('home')"
-                        class="inline-flex items-center gap-10"
-                        aria-label="На головну"
-                    >
-                        <img
-                            :src="Logo"
-                            alt="Alfirka"
-                            class="h-20 w-auto brightness-0 transition-all duration-300 dark:brightness-0 dark:invert"
-                        />
+                    <div class="flex flex-row">
+                        <Link
+                            :href="route('home')"
+                            class="inline-flex items-start gap-10"
+                            aria-label="На головну"
+                        >
+                            <img
+                                :src="Logo"
+                                alt="Alfirka"
+                                class="h-20 w-auto brightness-0 transition-all duration-300 dark:brightness-0 dark:invert"
+                            />
 
-                        <h2 class="text-2xl font-semibold tracking-wide">
-                            Alfirka
-                            <p class="text-xs text-gray-600 dark:text-gray-300">
-                                Студія зефірної флористики
-                            </p>
-                        </h2>
-                    </Link>
+                            <div class="-mt-1">
+                                <h2
+                                    class="text-2xl font-semibold tracking-wide"
+                                >
+                                    Alfirka
+                                </h2>
+
+                                <p
+                                    class="text-xs text-gray-600 dark:text-gray-300"
+                                >
+                                    Студія зефірної флористики
+                                </p>
+                            </div>
+                        </Link>
+                    </div>
 
                     <div
-                        class="mt-1 h-px w-80 bg-gray-400 dark:bg-gray-500"
+                        class="mt-1 h-px w-87 bg-gray-400 dark:bg-gray-500"
                     ></div>
 
                     <p
@@ -35,7 +44,7 @@
                         Букети з зефіру ручної роботи, створені з любов'ю та
                         увагою до кожної деталі, щоб ви могли насолодитися
                         незабутнім смаком та прихопити для рідних чи друзів
-                        приємний подаруночок .
+                        приємний подаруночок.
                     </p>
                     <!-- Відгуки про Alfirka -->
                     <a
@@ -158,8 +167,7 @@
                         </div>
 
                         <!-- Email -->
-                        <a href="mailto:" class="group flex items-center gap-4">
-                            <!-- Иконка всегда серая -->
+                        <div class="flex items-center gap-4">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
@@ -180,23 +188,20 @@
                                     d="M3.75 6l8.25 6 8.25-6"
                                 />
                             </svg>
-
-                            <span class="link-animated hover:text-pink-500">
-                                Email — буде додано
-                            </span>
-                        </a>
+                            <a
+                                href="mailto:alyusikosi@gmail.com"
+                                class="link-animated hover:text-pink-500"
+                            >
+                                alyusikosi@gmail.com
+                            </a>
+                        </div>
 
                         <!-- Instagram -->
-                        <a
-                            href="https://www.instagram.com/alfirka_if/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="flex items-center gap-4 text-gray-600 dark:text-gray-400"
-                        >
+                        <div class="flex items-center gap-4">
                             <svg
                                 viewBox="0 0 24 24"
                                 fill="currentColor"
-                                class="h-5 w-5 shrink-0"
+                                class="h-5 w-5 shrink-0 text-gray-600 dark:text-gray-400"
                                 aria-hidden="true"
                             >
                                 <path
@@ -208,10 +213,15 @@
                                 <circle cx="17.5" cy="6.5" r="1.25" />
                             </svg>
 
-                            <span class="link-animated hover:text-pink-500">
+                            <a
+                                href="https://www.instagram.com/alfirka_if/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="link-animated hover:text-pink-500"
+                            >
                                 @alfirka_if
-                            </span>
-                        </a>
+                            </a>
+                        </div>
 
                         <!-- Відгуки про Alfirka -->
                         <!-- <a
@@ -232,13 +242,14 @@
             >
                 © {{ currentYear }} Alfirka. Усі права захищені.
             </div>
-        </div>
+        </Container>
     </footer>
 </template>
 
 <script setup>
 import { Link } from "@inertiajs/vue3";
 
+import Container from "@/Components/Common/Container.vue";
 import NavLink from "@/Components/UI/NavLink.vue";
 import Logo from "@/Assets/logo.png";
 

@@ -206,7 +206,7 @@
                         x="35"
                         :y="line.y + 3"
                         text-anchor="end"
-                        class="fill-gray-400 text-[12px] sm:text-[9px]"
+                        class="fill-gray-400 text-[16px] sm:text-[9px]"
                     >
                         {{ line.value }}
                     </text>
@@ -240,7 +240,7 @@
                         :x="label.x"
                         y="182"
                         text-anchor="middle"
-                        class="fill-gray-400 text-[13px] sm:text-xs"
+                        class="fill-gray-400 text-[18px] sm:text-[9px]"
                     >
                         {{ label.label }}
                     </text>

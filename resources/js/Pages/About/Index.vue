@@ -8,19 +8,8 @@
         <AboutCoffee />
         <AboutCTA />
         <div class="mx-auto max-w-4xl px-6 py-16">
-            <h1
-                class="text-xl font-medium tracking-[0.18em] sm:text-2xl lg:text-3xl text-emerald-300"
-            >
-                про нас
-            </h1>
-
             <div class="mt-8 space-y-6 text-lg leading-relaxed">
-                <p>
-                    📝 Тут заказчик должен предоставить информацию о бренде
-                    Alfirka.
-                </p>
-
-                <p>Что нужно рассказать:</p>
+                <p>Что нужно рассказать в разделе про нас:</p>
 
                 <ul class="list-disc space-y-2 pl-6">
                     <li>История создания Alfirka.</li>

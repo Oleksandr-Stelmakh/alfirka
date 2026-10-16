@@ -167,7 +167,7 @@
                             href="https://www.instagram.com/alfirka_if/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="mt-3 group flex items-center gap-3"
+                            class="mt-3 group flex items-center gap-3 text-blue-500 transition hover:text-pink-500"
                         >
                             <!-- Instagram gradient -->
                             <svg
@@ -223,11 +223,7 @@
                                 />
                             </svg>
 
-                            <span
-                                class="link-animated text-blue-500 transition hover:text-pink-500"
-                            >
-                                @alfirka_if
-                            </span>
+                            @alfirka_if
                         </a>
                     </div>
 
@@ -241,11 +237,12 @@
                             Email
                         </h2>
 
-                        <p
-                            class="mt-3 text-lg text-gray-900 dark:text-gray-400"
+                        <a
+                            href="mailto:alyusikosi@gmail.com"
+                            class="mt-3 inline-block text-lg text-blue-500 transition hover:text-pink-500"
                         >
-                            Буде додано
-                        </p>
+                            alyusikosi@gmail.com
+                        </a>
                     </div>
                 </div>
 

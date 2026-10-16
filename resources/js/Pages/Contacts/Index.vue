@@ -5,19 +5,12 @@
         <ContactInfo />
 
         <div class="mx-auto max-w-4xl px-6 py-16">
-            <h1 class="text-4xl font-bold">КОНТАКТИ</h1>
-
             <div class="mt-8 space-y-6 text-lg leading-relaxed">
-                <p>
-                    📝 Тут заказчик должен предоставить информацию для связи с
-                    Alfirka.
-                </p>
-
-                <p>Что нужно разместить:</p>
+                <p>Что нужно разместить в этом разделе:</p>
 
                 <ul class="list-disc space-y-2 pl-6">
                     <li class="line-through">Номер телефона. 0660592120</li>
-                    <li>Email.</li>
+                    <li>Email. alyusikosi@gmail.com</li>
                     <li>Ссылки на Instagram / социальные сети. @alfirka_if</li>
                     <li>Адрес или город работы.</li>
                     <li>Информация о доставке.</li>
