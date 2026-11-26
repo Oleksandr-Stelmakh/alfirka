@@ -23,38 +23,6 @@
             <form class="space-y-6" @submit.prevent="submit">
                 <div>
                     <label
-                        for="category_id"
-                        class="mb-2 block text-sm font-medium text-gray-700"
-                    >
-                        Категорія
-                    </label>
-
-                    <select
-                        id="category_id"
-                        v-model="form.category_id"
-                        class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
-                    >
-                        <option value="">Оберіть категорію</option>
-
-                        <option
-                            v-for="category in categories"
-                            :key="category.id"
-                            :value="category.id"
-                        >
-                            {{ category.name }}
-                        </option>
-                    </select>
-
-                    <p
-                        v-if="form.errors.category_id"
-                        class="mt-2 text-sm text-red-600"
-                    >
-                        {{ form.errors.category_id }}
-                    </p>
-                </div>
-
-                <div>
-                    <label
                         for="title"
                         class="mb-2 block text-sm font-medium text-gray-700"
                     >
@@ -595,11 +563,6 @@ const props = defineProps({
         type: Object,
         required: true,
     },
-
-    categories: {
-        type: Array,
-        default: () => [],
-    },
 });
 
 const imageInput = ref(null);
@@ -608,7 +571,6 @@ const imageUploading = ref(false);
 const imageError = ref("");
 
 const form = useForm({
-    category_id: props.product.category_id,
     title: props.product.title,
     slug: props.product.slug,
     description: props.product.description ?? "",

@@ -36,12 +36,6 @@
                 </a>
 
                 <!-- Будущие разделы -->
-
-                <!-- Каталог -->
-                <!-- <div class="px-3 pb-2 pt-5 xl:px-4">
-                    <p class="text-xs font-medium text-gray-400">Каталог</p>
-                </div> -->
-
                 <a
                     :href="route('admin.products.index')"
                     class="flex min-w-0 items-center rounded-lg px-3 py-3 text-sm font-medium transition xl:px-4"
@@ -55,24 +49,6 @@
                     <span class="truncate">Товари</span>
                 </a>
 
-                <!-- <a
-                    :href="route('admin.categories.index')"
-                    class="flex min-w-0 items-center rounded-lg px-3 py-3 text-sm font-medium transition xl:px-4"
-                    :class="
-                        isActive('admin.categories.*')
-                            ? 'bg-emerald-100 text-gray-900'
-                            : 'text-gray-700 hover:bg-emerald-100 hover:text-gray-900'
-                    "
-                    @click="handleNavigation"
-                >
-                    <span class="truncate">Категорії</span>
-                </a> -->
-
-                <!-- Керування -->
-                <!-- <div class="px-3 pb-2 pt-5 xl:px-4">
-                    <p class="text-xs font-medium text-gray-400">Керування</p>
-                </div> -->
-
                 <a
                     :href="route('admin.admins.index')"
                     class="flex min-w-0 items-center rounded-lg px-3 py-3 text-sm font-medium transition xl:px-4"
@@ -84,6 +60,20 @@
                     @click="handleNavigation"
                 >
                     <span class="truncate">Адміністратори</span>
+                </a>
+
+                <!-- Оголошення на сайті -->
+                <a
+                    :href="route('admin.announcements.edit')"
+                    class="flex min-w-0 items-center rounded-lg px-3 py-3 text-sm font-medium transition xl:px-4"
+                    :class="
+                        isActive('admin.announcements.*')
+                            ? 'bg-emerald-100 text-gray-900'
+                            : 'text-gray-700 hover:bg-emerald-100 hover:text-gray-900'
+                    "
+                    @click="handleNavigation"
+                >
+                    <span class="truncate">Оголошення на сайті</span>
                 </a>
             </nav>
         </div>

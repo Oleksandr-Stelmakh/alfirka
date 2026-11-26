@@ -16,20 +16,28 @@
 
         <h2
             class="text-3xl font-semibold sm:text-4xl"
-            :class="light ? 'text-white' : 'text-emerald-700 dark:text-emerald-300'"
+            :class="
+                light ? 'text-white' : 'text-emerald-700 dark:text-emerald-300'
+            "
         >
             {{ title }}
         </h2>
 
-        <p
+        <div
             v-if="description"
-            class="mx-auto mt-5 max-w-2xl text-base leading-relaxed sm:text-lg"
+            class="mx-auto mt-5 max-w-2xl text-base leading-relaxed sm:text-lg whitespace-pre-line"
             :class="
                 light ? 'text-white/80' : 'text-gray-600 dark:text-gray-400'
             "
         >
-            {{ description }}
-        </p>
+            <p
+                v-for="(paragraph, index) in description.split('\n')"
+                :key="index"
+                class="mb-3 last:mb-0"
+            >
+                {{ paragraph }}
+            </p>
+        </div>
     </div>
 </template>
 

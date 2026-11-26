@@ -14,7 +14,6 @@ class CatalogController extends Controller
         $products = Product::query()
             ->where('is_active', true)
             ->with([
-                'category',
                 'variants' => function ($query) {
                     $query->orderBy('sort_order');
                 },

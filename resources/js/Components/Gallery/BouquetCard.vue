@@ -1,6 +1,6 @@
 <template>
     <article
-        class="relative group overflow-hidden rounded-3xl border border-violet-300 bg-white shadow-md transition-[box-shadow,border-color] duration-300 hover:shadow-xl dark:border-violet-800 dark:bg-violet-900/40"
+        class="relative group flex h-full flex-col overflow-hidden rounded-3xl border border-violet-300 bg-white shadow-md transition-[box-shadow,border-color] duration-300 hover:shadow-xl dark:border-violet-800 dark:bg-violet-900/40"
     >
         <!-- Фото -->
         <div class="overflow-hidden">
@@ -23,13 +23,13 @@
         </div>
 
         <!-- Контент -->
-        <div class="p-6">
+        <div class="flex flex-1 flex-col p-6">
             <h3 class="text-2xl font-bold text-violet-900 dark:text-white">
                 {{ bouquet.title }}
             </h3>
 
             <p
-                class="mt-3 text-sm leading-6 text-violet-600 dark:text-violet-300"
+                class="mt-3 text-sm leading-6 text-violet-600 dark:text-violet-300 whitespace-pre-line"
             >
                 {{ bouquet.description }}
             </p>
@@ -40,19 +40,19 @@
                     v-if="firstVariant.box_size"
                     class="rounded-full bg-violet-100 px-3 py-1 text-xs font-medium text-violet-700 dark:bg-violet-800 dark:text-violet-200"
                 >
-                    📦 {{ firstVariant.box_size }}
+                    {{ firstVariant.box_size }}
                 </span>
 
                 <span
                     v-if="firstVariant.flowers_count"
                     class="rounded-full bg-pink-100 px-3 py-1 text-xs font-medium text-pink-700 dark:bg-pink-900/50 dark:text-pink-200"
                 >
-                    🌸 {{ firstVariant.flowers_count }} квітів
+                    {{ firstVariant.flowers_count }}
                 </span>
             </div>
 
             <!-- Цена -->
-            <div class="mt-8 flex items-center justify-between">
+            <div class="mt-auto flex items-center justify-between pt-8">
                 <div>
                     <p class="text-xs uppercase tracking-wider text-violet-500">
                         Від

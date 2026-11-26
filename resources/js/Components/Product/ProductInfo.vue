@@ -4,7 +4,9 @@
             {{ bouquet.title }}
         </h1>
 
-        <p class="mt-6 text-lg leading-8 text-violet-600 dark:text-violet-300">
+        <p
+            class="mt-6 text-lg leading-8 text-violet-600 dark:text-violet-300 whitespace-pre-line"
+        >
             {{ bouquet.description }}
         </p>
 
@@ -49,14 +51,14 @@
                 v-if="selectedSize.box_size"
                 class="rounded-full bg-violet-100 px-4 py-2 dark:bg-violet-800 text-violet-700 dark:text-violet-200"
             >
-                📦 {{ selectedSize.box_size }}
+                {{ selectedSize.box_size }}
             </span>
 
             <span
                 v-if="selectedSize.flowers_count"
                 class="rounded-full bg-pink-100 px-4 py-2 dark:bg-pink-900/50 text-pink-700 dark:text-pink-200"
             >
-                🌸 {{ selectedSize.flowers_count }} квітів
+                {{ selectedSize.flowers_count }}
             </span>
         </div>
 
@@ -73,9 +75,9 @@
         <Button
             size="lg"
             class="mt-10 w-full max-w-125 self-center lg:max-w-none lg:self-auto hover:text-emerald-300"
-            @click="emit('order')"
+            @click="emit('add-to-cart')"
         >
-            Замовити букет
+            Додати до кошика
         </Button>
     </section>
 </template>
@@ -95,7 +97,7 @@ const props = defineProps({
     },
 });
 
-const emit = defineEmits(["select-size", "order"]);
+const emit = defineEmits(["select-size", "add-to-cart"]);
 
 function selectSize(size) {
     emit("select-size", size);

@@ -11,7 +11,7 @@
         ></div>
 
         <SectionHeader
-            class="pt-20 px-2 sm:px-4"
+            class="pt-16 px-2 sm:px-2"
             badge="✨ Чому обирають Alfirka"
             title="про нас"
             description=" Ми створюємо авторські зефірні букети та готуємо ароматну каву, щоб кожен візит викликав незабутні емоції."
@@ -74,5 +74,5 @@
 <script setup>
 import SectionHeader from "@/Components/UI/SectionHeader.vue";
 import Container from "@/Components/Common/Container.vue";
-import bouquetImage from "@/Assets/images-optimized/Alla-2/Королівський букет/IMG_8432.webp";
+import bouquetImage from "@/Assets/images-optimized/gallery-catalog/bouquets/img_19.webp";
 </script>

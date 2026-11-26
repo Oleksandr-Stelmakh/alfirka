@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\SiteAnnouncement;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -29,8 +30,6 @@ class HandleInertiaRequests extends Middleware
     /**
      * Define the props that are shared by default.
      *
-     * @see https://inertiajs.com/shared-data
-     *
      * @return array<string, mixed>
      */
     public function share(Request $request): array
@@ -40,6 +39,28 @@ class HandleInertiaRequests extends Middleware
                 'success' => fn () => $request->session()->get('success'),
                 'error' => fn () => $request->session()->get('error'),
             ],
+
+            'siteAnnouncement' => function () {
+                $announcement = SiteAnnouncement::query()
+                    ->where('id', 1)
+                    ->where('is_enabled', true)
+                    ->where('ends_at', '>', now())
+                    ->first();
+
+                if (! $announcement) {
+                    return null;
+                }
+
+                return [
+                    'id' => $announcement->id,
+                    'message' => $announcement->message,
+                    'starts_at' => $announcement->starts_at->toIso8601String(),
+                    'ends_at' => $announcement->ends_at->toIso8601String(),
+                    'theme' => $announcement->theme,
+                    'can_be_closed' => $announcement->can_be_closed,
+                    'updated_at' => $announcement->updated_at->toIso8601String(),
+                ];
+            },
         ]);
     }
 }

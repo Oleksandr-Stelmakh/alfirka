@@ -4,7 +4,8 @@
             <SectionHeader
                 badge="☕️ Alfirka Coffee"
                 title="Завітайте на чашечку кави"
-                description="Затишна кав'ярня, де можна відпочити, насолодитися ароматною кавою та приємною атмосферою"
+                description="Затишна кав'ярня, де можна відпочити, насолодитися ароматною кавою та приємною атмосферою. 
+                             Завітайте до Alfirka Coffee за адресою: м. Івано-Франківськ, вул. Молодіжна, 52."
             />
 
             <div
@@ -33,7 +34,7 @@
 
                 <!-- Content -->
                 <div
-                    class="relative bg-cover bg-center bg-fixed"
+                    class="relative bg-contain bg-center bg-fixed"
                     :style="{ backgroundImage: `url(${coffeeShopBg})` }"
                 >
                     <!-- Затемнение общего фона -->
@@ -52,7 +53,7 @@
                             <p class="mt-5 text-base text-gray-300">
                                 Завітайте до Alfirka Coffee, щоб зробити паузу,
                                 випити улюблену каву та просто провести час у
-                                затишній атмосфері
+                                затишній атмосфері.
                             </p>
 
                             <Link :href="route('coffee-shop')">

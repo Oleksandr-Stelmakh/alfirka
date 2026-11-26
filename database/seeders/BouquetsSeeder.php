@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
+
 use App\Models\Product;
 use App\Models\ProductImage;
 use App\Models\ProductVariant;
@@ -12,14 +12,6 @@ class BouquetsSeeder extends Seeder
 {
     public function run(): void
     {
-        $category = Category::updateOrCreate(
-            ['slug' => 'marshmallow-bouquets'],
-            [
-                'name' => 'Зефірні букети',
-                'is_active' => true,
-                'sort_order' => 1,
-            ]
-        );
 
         $bouquets = [
             [
@@ -543,7 +535,6 @@ class BouquetsSeeder extends Seeder
             $product = Product::updateOrCreate(
                 ['slug' => $bouquet['slug']],
                 [
-                    'category_id' => $category->id,
                     'title' => $bouquet['title'],
                     'description' => $bouquet['description'],
                     'badge' => $bouquet['badge'],

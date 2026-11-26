@@ -3,13 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
     protected $fillable = [
-        'category_id',
         'slug',
         'title',
         'description',
@@ -19,11 +17,6 @@ class Product extends Model
         'sort_order',
     ];
 
-    public function category(): BelongsTo
-    {
-        return $this->belongsTo(Category::class);
-    }
-
     public function variants(): HasMany
     {
         return $this->hasMany(ProductVariant::class);
@@ -31,6 +24,7 @@ class Product extends Model
 
     public function images(): HasMany
     {
-        return $this->hasMany(ProductImage::class);
+        return $this->hasMany(ProductImage::class)
+           ->whereNull('product_variant_id');
     }
 }

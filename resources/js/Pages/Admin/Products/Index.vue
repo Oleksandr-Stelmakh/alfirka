@@ -38,37 +38,31 @@
                     <thead class="border-b border-gray-200 bg-emerald-50">
                         <tr>
                             <th
-                                class="w-[22%] px-3 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-500"
+                                class="w-[27%] px-3 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-500"
                             >
                                 Назва
                             </th>
 
                             <th
-                                class="w-[16%] px-3 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-500"
-                            >
-                                Категорія
-                            </th>
-
-                            <th
-                                class="w-[20%] px-3 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-500"
+                                class="w-[25%] px-3 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-500"
                             >
                                 Slug
                             </th>
 
                             <th
-                                class="w-[13%] px-3 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-500"
+                                class="w-[14%] px-3 py-4 text-left text-xs font-semibold uppercase tracking-wider text-gray-500"
                             >
                                 Статус
                             </th>
 
                             <th
-                                class="w-[10%] px-3 py-4 text-center text-xs font-semibold uppercase tracking-wider text-gray-500"
+                                class="w-[14%] px-3 py-4 text-center text-xs font-semibold uppercase tracking-wider text-gray-500"
                             >
                                 Сортування
                             </th>
 
                             <th
-                                class="w-[19%] px-3 py-4 text-right text-xs font-semibold uppercase tracking-wider text-gray-500"
+                                class="w-[20%] px-3 py-4 text-right text-xs font-semibold uppercase tracking-wider text-gray-500"
                             >
                                 Дія
                             </th>
@@ -90,12 +84,6 @@
                                 >
                                     {{ product.badge }}
                                 </div>
-                            </td>
-
-                            <td
-                                class="wrap-break-words px-3 py-4 text-sm text-gray-600"
-                            >
-                                {{ product.category?.name ?? "Без категорії" }}
                             </td>
 
                             <td
@@ -165,10 +153,6 @@
                             <h2 class="font-medium text-gray-900">
                                 {{ product.title }}
                             </h2>
-
-                            <p class="mt-1 text-sm text-gray-500">
-                                {{ product.category?.name ?? "Без категорії" }}
-                            </p>
 
                             <p
                                 class="mt-1 wrap-break-words text-xs text-gray-400"

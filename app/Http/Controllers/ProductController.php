@@ -15,8 +15,6 @@ class ProductController extends Controller
             ->where('slug', $slug)
             ->where('is_active', true)
             ->with([
-                'category',
-
                 'variants' => function ($query) {
                     $query->orderBy('sort_order');
                 },

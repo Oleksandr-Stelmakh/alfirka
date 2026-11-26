@@ -28,6 +28,7 @@ class ProductImageController extends Controller
             'image.image' => 'Файл має бути зображенням.',
             'image.mimes' => 'Дозволені формати: JPG, JPEG, PNG, WEBP.',
             'image.max' => 'Розмір зображення не може перевищувати 10 МБ.',
+            'image.uploaded' => 'Не вдалося завантажити зображення. Перевірте, чи не перевищує його розмір 10 МБ. або формат файлу.',
         ]);
 
         $hasMainImage = $product->images()
@@ -133,6 +134,7 @@ class ProductImageController extends Controller
             'image.image' => 'Файл має бути зображенням.',
             'image.mimes' => 'Дозволені формати: JPG, JPEG, PNG, WEBP.',
             'image.max' => 'Розмір зображення не може перевищувати 10 МБ.',
+            'image.uploaded' => 'Не вдалося завантажити зображення. Перевірте, чи не перевищує його розмір 10 МБ. або формат файлу.',
         ]);
 
         $hasMainImage = $variant->images()

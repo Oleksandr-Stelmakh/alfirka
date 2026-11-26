@@ -20,7 +20,7 @@ class OrderCreatedMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Нове замовлення — Alfirka',
+            subject: 'Нове замовлення №' . ($this->order['order_id'] ?? '') . ' — Alfirka',
         );
     }
 
@@ -28,6 +28,9 @@ class OrderCreatedMail extends Mailable
     {
         return new Content(
             view: 'emails.order-created',
+            with: [
+                'order' => $this->order,
+            ],
         );
     }
 }

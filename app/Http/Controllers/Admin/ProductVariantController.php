@@ -26,8 +26,8 @@ class ProductVariantController extends Controller
     ): RedirectResponse {
         $data = $request->validate([
     'name' => ['required', 'string', 'max:50'],
-    'box_size' => ['nullable', 'string', 'max:50'],
-    'flowers_count' => ['nullable', 'integer', 'min:0'],
+    'box_size' => ['nullable', 'string', 'max:255'],
+    'flowers_count' => ['nullable', 'string', 'max:255'],
     'price' => ['required', 'integer', 'min:0'],
     'sort_order' => ['required', 'integer', 'min:0'],
     ], [
@@ -36,10 +36,10 @@ class ProductVariantController extends Controller
         'name.max' => 'Назва варіанту не може містити більше 50 символів.',
 
         'box_size.string' => 'Розмір коробки має бути текстом.',
-        'box_size.max' => 'Розмір коробки не може містити більше 50 символів.',
+        'box_size.max' => 'Розмір коробки не може містити більше 255 символів.',
 
-        'flowers_count.integer' => 'Кількість квітів має бути цілим числом.',
-        'flowers_count.min' => 'Кількість квітів не може бути менше 0.',
+        'flowers_count.max' => 'Поле кількості квітів не повинно перевищувати 255 символів.',
+        // 'flowers_count.min' => 'Кількість квітів не може бути менше 0.',
 
         'price.required' => 'Введіть ціну.',
         'price.integer' => 'Ціна має бути цілим числом.',
@@ -92,8 +92,8 @@ class ProductVariantController extends Controller
 
         $data = $request->validate([
     'name' => ['required', 'string', 'max:50'],
-    'box_size' => ['nullable', 'string', 'max:50'],
-    'flowers_count' => ['nullable', 'integer', 'min:0'],
+    'box_size' => ['nullable', 'string', 'max:255'],
+    'flowers_count' => ['nullable', 'string', 'max:255'],
     'price' => ['required', 'integer', 'min:0'],
     'sort_order' => ['required', 'integer', 'min:0'],
     ], [
@@ -102,10 +102,10 @@ class ProductVariantController extends Controller
         'name.max' => 'Назва варіанту не може містити більше 50 символів.',
 
         'box_size.string' => 'Розмір коробки має бути текстом.',
-        'box_size.max' => 'Розмір коробки не може містити більше 50 символів.',
+        'box_size.max' => 'Розмір коробки не може містити більше 255 символів.',
 
-        'flowers_count.integer' => 'Кількість квітів має бути цілим числом.',
-        'flowers_count.min' => 'Кількість квітів не може бути менше 0.',
+        'flowers_count.max' => 'Поле кількості квітів не повинно перевищувати 255 символів.',
+        // 'flowers_count.min' => 'Кількість квітів не може бути менше 0.',
 
         'price.required' => 'Введіть ціну.',
         'price.integer' => 'Ціна має бути цілим числом.',

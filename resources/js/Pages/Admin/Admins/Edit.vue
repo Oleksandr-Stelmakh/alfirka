@@ -43,7 +43,7 @@
                         v-model="form.name"
                         type="text"
                         autocomplete="name"
-                        class="mt-2 block w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 outline-none transition focus:border-gray-500 focus:ring-2 focus:ring-gray-200"
+                        class="mt-2 block w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-gray-200"
                     />
 
                     <p
@@ -67,7 +67,7 @@
                         v-model="form.email"
                         type="email"
                         autocomplete="email"
-                        class="mt-2 block w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 outline-none transition focus:border-gray-500 focus:ring-2 focus:ring-gray-200"
+                        class="mt-2 block w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-gray-200"
                     />
 
                     <p
@@ -92,7 +92,7 @@
                             v-model="form.password"
                             :type="showPassword ? 'text' : 'password'"
                             autocomplete="new-password"
-                            class="block w-full rounded-xl border border-gray-300 px-4 py-3 pr-12 text-gray-900 outline-none transition focus:border-gray-500 focus:ring-2 focus:ring-gray-200"
+                            class="block w-full rounded-xl border border-gray-300 px-4 py-3 pr-12 text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-gray-200"
                         />
 
                         <button
@@ -182,7 +182,7 @@
                                 showPasswordConfirmation ? 'text' : 'password'
                             "
                             autocomplete="new-password"
-                            class="block w-full rounded-xl border border-gray-300 px-4 py-3 pr-12 text-gray-900 outline-none transition focus:border-gray-500 focus:ring-2 focus:ring-gray-200"
+                            class="block w-full rounded-xl border border-gray-300 px-4 py-3 pr-12 text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-gray-200"
                         />
 
                         <button

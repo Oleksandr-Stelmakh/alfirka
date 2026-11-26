@@ -9,7 +9,9 @@
         <AboutCTA />
         <div class="mx-auto max-w-4xl px-6 py-16">
             <div class="mt-8 space-y-6 text-lg leading-relaxed">
-                <p>Что нужно рассказать в разделе про нас:</p>
+                <p>Этот блок для тебя, чтоб было понятно какую информацию тут нужно разместить.</p>
+                <p> Что нужно рассказать в разделе про нас: </p>
+               
 
                 <ul class="list-disc space-y-2 pl-6">
                     <li>История создания Alfirka.</li>

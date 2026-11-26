@@ -9,7 +9,7 @@
     >
         <Container
             class="transition-all duration-300"
-            :class="isScrolled ? 'py-1' : 'py-2 sm:py-4'"
+            :class="isScrolled ? 'py-1' : 'py-2 '"
         >
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3">
@@ -18,7 +18,7 @@
                             :src="Logo"
                             alt="Alfirka"
                             class="w-auto brightness-0 invert transition-all duration-300"
-                            :class="isScrolled ? 'h-16' : 'h-21.5'"
+                            :class="isScrolled ? 'h-16' : 'h-16 sm:h-27'"
                         />
                     </Link>
 
@@ -53,7 +53,7 @@
                         <!-- Instagram gradient -->
                         <svg
                             viewBox="0 0 24 24"
-                            class="h-5 w-5 shrink-0"
+                            class="h-5 w-5 shrink-0 hover:scale-115"
                             aria-hidden="true"
                         >
                             <defs>
@@ -107,12 +107,49 @@
                         </Button>
                     </Link>
 
+                    <!-- Кошик -->
+                    <Link
+                        href="/cart"
+                        aria-label="Кошик"
+                        class="relative flex items-center gap-2 rounded-xl p-2 text-fuchsia-600 transition hover:bg-white/20"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="h-5 w-5"
+                        >
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path
+                                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                            />
+                        </svg>
+
+                        <span class="hidden sm:inline text-sm font-medium">
+                            Кошик
+                        </span>
+
+                        <span
+                            v-if="totalItems > 0"
+                            class="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-pink-600 px-1 text-xs font-bold text-white"
+                        >
+                            {{ totalItems }}
+                        </span>
+                    </Link>
+
                     <ThemeSwitcher />
 
                     <BurgerButton :is-open="isMenuOpen" @toggle="toggleMenu" />
                 </div>
             </div>
         </Container>
+        <!-- Оголошення на сайті -->
+        <AnnouncementBar />
     </header>
 
     <!-- Мобильное меню -->
@@ -127,6 +164,7 @@
 <script setup>
 import { ref, watch, onBeforeUnmount, onMounted } from "vue";
 import { Link } from "@inertiajs/vue3";
+import { useCart } from "@/Composables/useCart";
 
 import Container from "@/Components/Common/Container.vue";
 import NavLink from "@/Components/UI/NavLink.vue";
@@ -136,12 +174,15 @@ import Button from "@/Components/UI/Button.vue";
 import Flower from "@/Components/Icons/Flower.vue";
 import MobileMenu from "@/Components/Common/MobileMenu.vue";
 import BurgerButton from "@/Components/UI/BurgerButton.vue";
+import AnnouncementBar from "@/Components/Common/AnnouncementBar.vue";
+
+const { totalItems } = useCart();
 
 const isScrolled = ref(false);
 
 const navigation = [
     { label: "Головна", route: "home" },
-    { label: "Галерея", route: "gallery" },
+    { label: "Каталог", route: "gallery" },
     { label: "Кав'ярня", route: "coffee-shop" },
     { label: "Про нас", route: "about" },
     { label: "Контакти", route: "contacts" },

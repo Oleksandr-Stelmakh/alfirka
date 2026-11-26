@@ -77,9 +77,8 @@
 
                     <input
                         id="flowers_count"
-                        v-model.number="form.flowers_count"
-                        type="number"
-                        min="0"
+                        v-model="form.flowers_count"
+                        type="text"
                         class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
                     />
 
